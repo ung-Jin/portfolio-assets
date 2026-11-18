@@ -9,4 +9,6 @@ for f in sorted(glob.glob('card-*.html')+glob.glob('page-*.html')):
     for y in range(h-1,-1,-1):
         if any(sum(px[x,y])<740 for x in range(0,w,4)): last=y; break
     if last>=h-4: print('!! 창 높이 부족', f)
+    edge=[y for y in range(h) if any(sum(px[x,y])<600 for x in range(w-3,w)) and sum(px[w-60,y])>=600]
+    if edge: print('!! 오른쪽 끝에 글자가 닿음(잘림 의심)', f, len(edge))
     c=im.crop((0,0,w,min(h,last+1+48))); c.save(out); print(out, c.size)

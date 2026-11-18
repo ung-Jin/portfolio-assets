@@ -19,10 +19,10 @@ CCSS=BASE+""".top{display:flex;align-items:center;gap:16px;margin:20px 0 28px}
 .b{color:#B9C4CF}.arrow{color:#5F7388;font-weight:400;font-size:.6em}
 .cap{margin-top:16px;font-size:29px;line-height:1.55;word-break:keep-all}
 .bars{display:flex;flex-direction:column;gap:20px;margin-top:6px}
-.bar{display:flex;align-items:center;gap:24px}.bar .n{width:520px;font-size:29px;word-break:keep-all}
+.bar{display:flex;align-items:center;gap:24px}.bar .n{width:520px;flex-shrink:0;font-size:29px;word-break:keep-all}
 .bar .t{flex:1;height:34px;background:#EEF1F4}.bar .t u{display:block;height:100%;background:#B9C4CF}
 .bar.f .t u{background:#2B2D31}.bar.f .n{font-weight:700}
-.bar .p{width:150px;text-align:right;font-size:40px;font-weight:900;color:#B9C4CF}.bar.f .p{color:#2B2D31}
+.bar .p{width:200px;flex-shrink:0;white-space:nowrap;text-align:right;padding-right:6px;box-sizing:border-box;font-size:40px;font-weight:900;color:#B9C4CF}.bar.f .p{color:#2B2D31}
 """
 def metric(b):
     if b.get('bars'):
