@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+  @page { size: 1920px 1160px; margin: 0 }
+  :root { --ink:#2B2D31; --blue:#5F7388; --blue-l:#DDE4EB; --paper:#FFFFFF; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  html,body { width:1920px; height:1160px; background:var(--paper) }
+  body { font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif; color:var(--ink); position:relative; overflow:hidden }
+  .serif { font-family:'Noto Serif CJK KR','Noto Serif KR',serif }
+
+  .band { position:absolute; left:0; top:0; width:1920px; height:250px; background:var(--ink); color:#fff }
+  .band .tag { position:absolute; left:120px; top:84px; width:56px; height:6px; background:var(--blue) }
+  .band .t { position:absolute; left:112px; top:104px; font-size:104px; line-height:1; font-weight:900; letter-spacing:-.01em }
+  .band .sub { position:absolute; right:120px; top:92px; text-align:right; font-size:18px; letter-spacing:.36em; color:rgba(255,255,255,.62); font-weight:500; line-height:2 }
+  .band .sub b { color:#fff; font-weight:700 }
+
+  .cols { position:absolute; left:120px; top:322px; width:1680px; display:flex; align-items:flex-start }
+  .col { width:432px; min-height:740px; padding-right:48px; position:relative }
+  .col:first-child { width:384px }
+  .col + .col { padding-left:48px; border-left:1px solid rgba(43,45,49,.22) }
+  .num { font-size:60px; line-height:1; color:var(--blue); font-weight:300 }
+  .h { margin-top:18px; font-size:25px; letter-spacing:.2em; font-weight:700 }
+  .hr { margin-top:18px; height:3px; background:var(--ink) }
+  .item { padding:22px 0 22px; border-bottom:1px solid rgba(43,45,49,.18) }
+  .item .d { font-size:19px; letter-spacing:.06em; color:var(--blue); font-weight:700; font-variant-numeric:tabular-nums }
+  .item .n { margin-top:8px; font-size:29px; font-weight:700; line-height:1.3; letter-spacing:-.01em }
+  .item .o { margin-top:4px; font-size:20px; color:rgba(43,45,49,.68) }
+  .note { margin-top:24px; font-size:19px; line-height:1.7; color:rgba(43,45,49,.78) }
+
+  .foot { position:absolute; left:120px; right:0; bottom:0; height:76px }
+  .foot .line { position:absolute; left:0; width:1680px; top:0; height:1px; background:rgba(43,45,49,.28) }
+  .foot .tab { position:absolute; left:0; top:-1px; height:40px; width:150px; background:var(--ink); color:#fff; font-size:17px; letter-spacing:.14em; font-weight:500; display:flex; align-items:center; justify-content:center }
+  .foot .c { position:absolute; left:200px; top:7px; width:1480px; font-size:19px; letter-spacing:.02em; text-align:right; white-space:nowrap }
+  .foot .c i { font-style:normal; color:var(--blue); margin-right:10px; letter-spacing:.12em; font-size:15px; font-weight:700 }
+</style></head>
+<body>
+  <div class="band">
+    <div class="tag"></div>
+    <div class="t">PROFILE</div>
+    <div class="sub"><b>CERTIFICATE</b> &nbsp;/&nbsp; EDUCATION<br>EXPERIENCE &nbsp;/&nbsp; AWARDS</div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="num serif">01</div><div class="h">CERTIFICATE</div><div class="hr"></div>
+      <div class="item"><div class="d">2026.09</div><div class="n">정보처리기사</div><div class="o">한국산업인력공단</div></div>
+      <div class="item"><div class="d">2026.06</div><div class="n">네트워크관리사 2급</div><div class="o">정보통신자격협회</div></div>
+      <div class="item"><div class="d">2026.11</div><div class="n">ADsP</div><div class="o">한국데이터산업진흥원</div></div>
+      <div class="item"><div class="d">2026.12</div><div class="n">SQLD</div><div class="o">한국데이터산업진흥원</div></div>
+    </div>
+    <div class="col">
+      <div class="num serif">02</div><div class="h">EDUCATION</div><div class="hr"></div>
+      <div class="item"><div class="d">2026.06 – 2026.11</div><div class="n">그린AI캠퍼스</div><div class="o">풀스택 양성과정</div></div>
+      <div class="item"><div class="d">2011.03 – 2016.07</div><div class="n">동아대학교</div><div class="o">컴퓨터공학과</div></div>
+      <div class="item"><div class="d">2008.03 – 2011.02</div><div class="n">한국게임과학고</div><div class="o">프로그래밍과</div></div>
+    </div>
+    <div class="col">
+      <div class="num serif">03</div><div class="h">EXPERIENCE</div><div class="hr"></div>
+      <div class="item"><div class="d">2023.10 – 2025.07</div><div class="n">현대자동차</div><div class="o">생산 계약직</div></div>
+      <div class="item"><div class="d">2020.11 – 2021.11</div><div class="n">grit365</div><div class="o">스마트스토어 운영</div></div>
+      <div class="item"><div class="d">2017 – 2018.08</div><div class="n">프로게이머</div><div class="o">배틀그라운드</div></div>
+    </div>
+    <div class="col">
+      <div class="num serif">04</div><div class="h">AWARDS</div><div class="hr"></div>
+      <div class="item"><div class="d">2009</div><div class="n">청소년 게임공모전</div><div class="o">게임제작 은상</div></div>
+      <div class="item"><div class="d">2008</div><div class="n">청소년 게임대회</div><div class="o">모바일게임 우승</div></div>
+      <div class="note">두 대회 모두 4인 팀에서<br>프로그래밍을 맡았습니다.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="line"></div>
+    <div class="tab">Portfolio</div>
+    <div class="c"><i>EMAIL</i>leeungjin@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<i>GITHUB</i>github.com/ung-Jin</div>
+  </div>
+</body></html>
