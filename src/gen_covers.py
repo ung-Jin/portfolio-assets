@@ -11,16 +11,16 @@ D=[
 ('9','3차 · 해상교통 안전경로','영상 주소를<br>Git 이력에서 지웠습니다','보안·권한','새 저장소 검색 결과','0건'),
 ]
 CSS="""*{margin:0;padding:0;box-sizing:border-box}
-body{width:960px;height:560px;font-family:'Noto Sans CJK KR',sans-serif;background:#fff;color:#2B2D31;overflow:hidden}
-.top{height:330px;background:#2B2D31;padding:40px 48px;color:#fff;position:relative}
+body{width:960px;height:560px;font-family:'Noto Sans CJK KR',sans-serif;background:#2B2D31;color:#fff;overflow:hidden;position:relative}
+.top{height:300px;padding:44px 52px;position:relative;border-bottom:2px solid #4A5159}
 .eb{display:flex;align-items:center;gap:14px;font-size:15px;letter-spacing:.28em;color:#DDE4EB;font-weight:500}
 .eb i{display:block;width:34px;height:3px;background:#5F7388}
-.t{margin-top:30px;font-size:42px;line-height:1.28;font-weight:900;word-break:keep-all}
-.n{position:absolute;right:44px;bottom:18px;font-family:'Noto Serif CJK KR',serif;font-size:110px;font-weight:300;color:#5F7388;line-height:1}
-.bot{padding:30px 48px}
-.l{font-size:15px;letter-spacing:.18em;font-weight:700;color:#5F7388}
-.v{margin-top:12px;font-size:60px;font-weight:900;line-height:1.1;white-space:nowrap}
-.c{position:absolute;left:48px;bottom:30px;font-size:17px;color:#5F7388;font-weight:500}
+.t{margin-top:30px;max-width:700px;font-size:42px;line-height:1.28;font-weight:900;word-break:keep-all}
+.n{position:absolute;right:48px;top:44px;font-family:'Noto Serif CJK KR',serif;font-size:84px;font-weight:300;color:#5F7388;line-height:1}
+.bot{padding:34px 52px}
+.l{font-size:15px;letter-spacing:.18em;font-weight:700;color:#9FB0C0}
+.v{margin-top:12px;font-size:64px;font-weight:900;line-height:1.1;white-space:nowrap;color:#fff}
+.c{position:absolute;left:52px;bottom:28px;font-size:17px;color:#9FB0C0;font-weight:500}
 """
 for n,p,t,c,l,v in D:
     open(f'cover-{n}.html','w',encoding='utf-8').write(f'<!doctype html><meta charset=utf-8><style>{CSS}</style><div class="top"><div class="eb"><i></i>{p}</div><div class="t">{t}</div><div class="n">0{n}</div></div><div class="bot"><div class="l">{l}</div><div class="v">{v}</div></div><div class="c">{c}</div>')
