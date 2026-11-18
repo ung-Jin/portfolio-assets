@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+  @page { size: 1920px 860px; margin: 0 }
+  :root { --ink:#2B2D31; --blue:#5F7388; --blue-l:#DDE4EB; --paper:#FFFFFF; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  html,body { width:1920px; height:860px; background:var(--paper); }
+  body { font-family:'Noto Sans CJK KR','Noto Sans KR',sans-serif; color:var(--ink); position:relative; overflow:hidden }
+  .serif { font-family:'Noto Serif CJK KR','Noto Serif KR',serif }
+
+  /* 오른쪽 차콜 블록 */
+  .panel { position:absolute; left:1240px; top:0; width:680px; height:860px; background:var(--ink); color:#fff }
+  .panel .tag { position:absolute; left:80px; top:84px; width:56px; height:6px; background:var(--blue) }
+  .panel .vert { position:absolute; right:40px; top:84px; writing-mode:vertical-rl; font-size:17px; letter-spacing:.42em; color:rgba(255,255,255,.55); font-weight:500 }
+  .stat { position:absolute; left:80px; right:120px; border-top:1px solid rgba(255,255,255,.22); padding-top:18px }
+  .stat .n { font-size:104px; line-height:1; font-weight:300; letter-spacing:-.02em }
+  .stat .n small { font-size:38px; margin-left:8px; color:var(--blue-l) }
+  .stat .l { margin-top:8px; font-size:20px; letter-spacing:.2em; font-weight:500; color:rgba(255,255,255,.88) }
+  .stat .s { margin-top:4px; font-size:18px; color:rgba(255,255,255,.55) }
+
+  /* 왼쪽 */
+  .dash { position:absolute; left:120px; top:92px; width:44px; height:6px; background:var(--ink) }
+  .eyebrow { position:absolute; left:188px; top:80px; font-size:22px; letter-spacing:.38em; font-weight:700 }
+  .eyebrow span { display:block; margin-top:6px; font-size:18px; letter-spacing:.06em; font-weight:400; color:var(--blue) }
+  .name { position:absolute; left:112px; top:182px; font-size:236px; line-height:1; font-weight:900; letter-spacing:-.045em }
+  .role { position:absolute; left:120px; top:470px; font-size:46px; font-style:italic; color:var(--blue); letter-spacing:.01em }
+  .rule { position:absolute; left:120px; top:548px; width:1000px; height:2px; background:var(--ink) }
+  .intro { position:absolute; left:120px; top:580px; width:900px; font-size:27px; line-height:1.78; font-weight:400; color:rgba(43,45,49,.86) }
+  .intro b { font-weight:700; color:var(--ink) }
+
+  /* 하단 띠 */
+  .foot { position:absolute; left:120px; right:0; bottom:0; height:76px; }
+  .foot .line { position:absolute; left:0; width:1120px; top:0; height:1px; background:rgba(43,45,49,.28) }
+  .foot .tab { position:absolute; left:0; top:-1px; height:40px; width:150px; background:var(--ink); color:#fff; font-size:17px; letter-spacing:.14em; font-weight:500; display:flex; align-items:center; justify-content:center }
+  .foot .c { position:absolute; left:200px; top:7px; width:860px; font-size:19px; color:var(--ink); letter-spacing:.02em; text-align:right; white-space:nowrap }
+  .foot .c i { font-style:normal; color:var(--blue); margin-right:10px; letter-spacing:.12em; font-size:15px; font-weight:700 }
+</style></head>
+<body>
+  <div class="dash"></div>
+  <div class="eyebrow">PORTFOLIO</div>
+  <div class="name">이웅진</div>
+  <div class="role serif">Full-Stack Developer</div>
+  <div class="rule"></div>
+  <div class="intro">게임이 좋아 게임과학고 프로그래밍과에 들어갔고, 프로게이머와 생산직을 거쳐 <b>프로그래밍으로 돌아왔습니다.</b> 국비 과정에서 팀 프로젝트 3개를 모두 팀장으로 맡았고, 한 것과 막힌 것을 작업일지 36편 넘게 남겼습니다.</div>
+
+  <div class="panel">
+    <div class="tag"></div>
+    <div class="vert">PORTFOLIO &nbsp;·&nbsp; 2026</div>
+    <div class="stat" style="top:150px"><div class="n serif">3<small>팀</small></div><div class="l">TEAM PROJECTS</div><div class="s">세 프로젝트 모두 팀장</div></div>
+    <div class="stat" style="top:372px"><div class="n serif">9</div><div class="l">TROUBLESHOOTING</div><div class="s">막힌 문제와 해결 과정</div></div>
+    <div class="stat" style="top:594px"><div class="n serif">36<small>+</small></div><div class="l">WORK LOGS</div><div class="s">작업일지</div></div>
+  </div>
+
+  <div class="foot">
+    <div class="line"></div>
+    <div class="tab">Portfolio</div>
+  </div>
+</body></html>

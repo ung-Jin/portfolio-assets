@@ -44,8 +44,7 @@ def page(name, W, H, body):
         f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>{css}</style></head><body>{body}</body></html>')
 
 TOTAL = 5
-foot = '''<div class="foot"><div class="line"></div><div class="tab">Portfolio</div>
-<div class="c"><i>EMAIL</i>leeungjin@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;<i>GITHUB</i>github.com/ung-Jin</div></div>'''
+foot = '''<div class="foot"><div class="line"></div><div class="tab">Portfolio</div></div>'''
 
 # 01 PROFILE
 def items(rows):
