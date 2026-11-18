@@ -2,7 +2,7 @@
 P=[
 ('01','4인 · 팀장','2026.09.07 – 09.15','냉·난방 AS기사 스케줄 관리','고객이 A/S를 신청하면 관리자가 기사를 배정하고, 기사가 방문 결과를 보고하는 흐름을 하나로 묶은 웹 시스템입니다.','로그인 검사가 빠진 곳','5곳 → 1곳','Spring Boot · MyBatis · MariaDB · Thymeleaf','shot-1.png'),
 ('02','4인 · 팀장','2026.09.18 – 10.16','시도별 전력사용량 예측 대시보드','17개 시도의 월별 전력사용량과 날씨로 향후 3개월을 예측하고, 지도와 차트로 보여주는 대시보드입니다.','강원도 예측 오차','24.4% → 7.05%','Python · scikit-learn · FastAPI · Spring Boot · Chart.js','shot-2.png'),
-('03','4인 · 팀장','2026.10.17 – 11.12','해상교통 안전경로 예측 시스템','교통·사고위험·날씨를 반영한 안전경로를 거리만 보는 최소경로와 함께 보여주는 출항 전 항해 계획 도구입니다.','육지를 지나는 경로 비율','3~16% → 0.136%','Spring Boot · Python · Leaflet','shot-3.png')]
+('03','4인 · 팀장','2026.10.17 – 11.12','해상교통 안전경로 예측 시스템','교통·사고위험·날씨를 반영한 안전경로를 거리만 보는 최소경로와 함께 보여주는 출항 전 항해 계획 도구입니다.','최소경로 대비 평균 위험점수','−22.6%','Spring Boot · Python · Leaflet','shot-3.png')]
 CSS="""*{margin:0;padding:0;box-sizing:border-box}body{width:1920px;height:640px;background:#fff;font-family:'Noto Sans CJK KR',sans-serif;color:#2B2D31;overflow:hidden;position:relative}
 .rule{position:absolute;left:0;right:0;top:40px;border-top:3px solid #2B2D31}
 .l{position:absolute;left:0;top:76px;width:700px}

@@ -1,6 +1,6 @@
 # 프로젝트 페이지용: 사례 머리 이미지 + GitHub/작업일지 링크 타일 (본문 폭 약 708px, 2배 크기로 설계)
 B="*{margin:0;padding:0;box-sizing:border-box}body{background:#fff;font-family:'Noto Sans CJK KR',sans-serif;color:#2B2D31;overflow:hidden}"
-T=[('01','로그인 검사를 인터셉터 한 곳으로 모았습니다'),('02','흩어진 SQL을 정본 하나로 합쳤습니다'),('03','좋은 점수의 원인은 데이터 누수였습니다'),('04','강원도 오차 24.4%를 추적했습니다'),('05','히트맵을 세 번 바꿔 만들었습니다'),('06','위험 가중치를 채점해서 정했습니다'),('07','경로의 육지 통과를 0.136%로 줄였습니다'),('08','날씨 모델을 검증하고 설계를 바꿨습니다'),('09','영상 주소를 Git 이력에서 지웠습니다')]
+T=[('01','로그인 검사를 인터셉터 한 곳으로 모았습니다'),('02','흩어진 SQL 파일을 하나로 합쳤습니다'),('03','좋은 점수의 원인은 데이터 누수였습니다'),('04','강원도 오차 24.4%를 추적했습니다'),('05','히트맵을 세 번 바꿔 만들었습니다'),('06','위험 가중치를 채점해서 정했습니다'),('07','날씨 모델을 검증하고 설계를 바꿨습니다'),('08','영상 주소를 Git 이력에서 지웠습니다')]
 for n,t in T:
     open(f'case-{n}.html','w',encoding='utf-8').write(f'''<!doctype html><meta charset=utf-8><style>{B}
 body{{width:1416px;height:170px}}.r{{position:absolute;left:0;right:0;bottom:0;height:140px;border-bottom:4px solid #2B2D31;display:flex;align-items:baseline;gap:28px;padding-bottom:26px}}

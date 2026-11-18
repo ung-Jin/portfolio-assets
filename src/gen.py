@@ -62,14 +62,14 @@ page('cv', 1920, 1260, band('PROFILE',1,TOTAL,'CERTIFICATE / EDUCATION / EXPERIE
 def techs(l): return ''.join(f'<div class="tech">{t}</div>' for t in l)
 sk = '<div class="cols" style="top:272px">' + \
   col('01','BACKEND', techs(['Java','Spring Boot','MyBatis','FastAPI'])) + \
-  col('02','FRONTEND', techs(['Thymeleaf','JavaScript','Chart.js','Leaflet','amCharts'])) + \
+  col('02','FRONTEND', techs(['Thymeleaf','JavaScript','Chart.js','Leaflet','React'])) + \
   col('03','DATA · AI', techs(['Python','pandas','scikit-learn','XGBoost','LightGBM'])) + \
   col('04','DB · TOOLS', techs(['MariaDB','ERDCloud','Git','GitHub','Notion'])) + '</div>'
 page('skills', 1920, 1010, band('SKILLS',2,TOTAL,'BACKEND / FRONTEND / DATA · AI / DB · TOOLS') + sk)
 
 # 03 / 04 banners
 page('banner-projects', 1920, 200, band('PROJECTS',3,TOTAL,'3 TEAM PROJECTS · TEAM LEADER'))
-page('banner-troubleshooting', 1920, 200, band('TROUBLESHOOTING',4,TOTAL,'9 CASES · SITUATION / CAUSE / FIX / RESULT'))
+page('banner-troubleshooting', 1920, 200, band('TROUBLESHOOTING',4,TOTAL,'8 CASES · SITUATION / CAUSE / FIX / RESULT'))
 
 # 05 RETROSPECTIVE
 def r(n, big, body):

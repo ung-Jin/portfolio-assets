@@ -5,7 +5,7 @@ P=eval(re.search(r"P=(\[.*?\])\nCSS",src,re.S).group(1))
 CSS=re.search(r'CSS="""(.*?)"""',src,re.S).group(1).replace('height:640px','height:__H__px')
 INSIDE={'01':'내 담당 · 문제 해결 2건 · 설계(ERD) · 기술 스택 · 남은 한계',
         '02':'내 담당 · 문제 해결 3건 · 모델 비교 · 구조 · 남은 한계',
-        '03':'내 담당 · 문제 해결 4건 · 구조 · 기술 스택 · 남은 한계'}
+        '03':'내 담당 · 문제 해결 3건 · 구조 · 기술 스택 · 남은 한계'}
 VAR={
 'a':""".cta{position:absolute;left:0;right:0;top:644px;height:92px;border:2px solid #2B2D31;display:flex}
 .ci{flex:1;display:flex;align-items:center;gap:28px;padding:0 34px}
@@ -19,7 +19,7 @@ VAR={
 .cv{font-size:26px;font-weight:500;color:#2B2D31}
 .cb{display:flex;align-items:center;gap:22px;font-size:27px;font-weight:700;color:#2B2D31}
 .cb b{width:58px;height:58px;border-radius:50%;background:#2B2D31;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:400}"""}
-for v,vcss in VAR.items():
+for v,vcss in [('b',VAR['b'])]:
   for n,role,per,t,d,kl,kv,st,img in P:
     H=760
     open(f'link/proj-{n}-{v}.html','w',encoding='utf-8').write(f'<!doctype html><meta charset=utf-8><style>{CSS.replace("__H__",str(H))}{vcss}</style><div class="rule"></div><div class="l"><div class="n">{n}</div><div class="meta">{role}　·　{per}</div><div class="t">{t}</div><div class="d">{d}</div></div><div class="k"><div class="kl">KEY RESULT · {kl}</div><div class="kv">{kv}</div></div><div class="s">{st}</div><div class="img"><img src="../{img}"></div><div class="cta"><div class="ci"><span class="cl">INSIDE</span><span class="cv">{INSIDE[n]}</span></div><div class="cb">프로젝트 자세히 보기<b>→</b></div></div>')
