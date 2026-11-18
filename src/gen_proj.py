@@ -13,8 +13,8 @@ CSS="""*{margin:0;padding:0;box-sizing:border-box}body{width:1920px;height:640px
 .k{position:absolute;left:0;top:440px;width:700px;border-top:1px solid #DDE4EB;padding-top:22px}
 .kl{font-size:15px;letter-spacing:.2em;font-weight:700;color:#5F7388}
 .kv{margin-top:8px;font-size:62px;font-weight:900;line-height:1.05;white-space:nowrap}
-.s{position:absolute;left:0;top:590px;font-size:17px;color:#5F7388;font-weight:500}
-.img{position:absolute;left:860px;top:76px;width:1060px;height:500px;border:1px solid #DDE4EB;border-radius:6px;overflow:hidden;background:#EEF1F4}
+.s{position:absolute;left:0;top:595px;line-height:1;font-size:17px;color:#5F7388;font-weight:500}
+.img{position:absolute;left:860px;top:76px;width:1060px;height:536px;border:1px solid #DDE4EB;border-radius:6px;overflow:hidden;background:#EEF1F4}
 .img img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
 """
 for n,role,per,t,d,kl,kv,st,img in P:
