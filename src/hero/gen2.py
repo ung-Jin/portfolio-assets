@@ -7,12 +7,12 @@ def idphoto(x,y,w,h,bg):
 <div class="abs" style="left:{int(w*.08)}px;top:{int(h*.58)}px;width:{int(w*.84)}px;height:{int(h*.6)}px;border-radius:{int(w*.4)}px {int(w*.4)}px 0 0;background:#23293A"></div>
 <div class="abs" style="left:{int(w*.44)}px;top:{int(h*.58)}px;width:{int(w*.12)}px;height:{int(h*.3)}px;background:#F2F2F2;clip-path:polygon(0 0,100% 0,50% 100%)"></div></div>'''
 def stats(top0,gap):
-    rows=[('3<small>개</small>','TEAM PROJECTS','한 팀으로 세 프로젝트 모두 팀장'),('8','TROUBLESHOOTING','막힌 문제와 해결 과정'),('46','WORK LOGS','작업일지')]
+    rows=[('3<small>개</small>','TEAM PROJECTS','한 팀으로 세 프로젝트 모두 팀장'),('9','TROUBLESHOOTING','막힌 문제와 해결 과정'),('46','WORK LOGS','작업일지')]
     return ''.join(f'<div class="stat" style="top:{top0+i*gap}px;padding-top:16px;display:flex;align-items:center;gap:28px"><div class="n serif" style="font-size:72px;width:150px">{n}</div><div><div class="l" style="margin:0">{l}</div><div class="s">{s}</div></div></div>' for i,(n,l,s) in enumerate(rows))
 def left(name_px, role_px, head_px, top_name, top_role, top_rule):
     return f'''<div class="abs dash" style="left:72px;top:108px"></div><div class="abs eb" style="left:140px;top:96px">PORTFOLIO</div>
 <div class="abs name" style="left:{72-int(name_px*.045)}px;top:{top_name}px;font-size:{name_px}px">이웅진</div>
-<div class="abs role serif" style="left:72px;top:{top_role}px;font-size:{role_px}px">Full-Stack Developer</div>
+<div class="abs role serif" style="left:72px;top:{top_role}px;font-size:{role_px}px">Full-Stack Developer · Java / Spring Boot / Python</div>
 <div class="abs rule" style="left:72px;top:{top_rule}px;width:1096px"></div>
 <div class="abs head" style="left:72px;top:{top_rule+34}px;width:1096px;font-size:{head_px}px">{HEAD}</div>
 <div class="abs intro" style="left:72px;top:{top_rule+34+int(head_px*1.4)+18}px;width:960px">{INTRO}</div>'''

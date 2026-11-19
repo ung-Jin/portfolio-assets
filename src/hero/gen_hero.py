@@ -10,5 +10,5 @@ if photo:
     ph_html = f'<div class="abs" style="left:{X}px;top:{Y}px;width:{W}px;height:{H}px;{frame}overflow:hidden"><img src="{photo}" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>'
 else:
     ph_html = ph(X,Y,W,H,dark=True).replace('class="abs ph"','class="abs ph" data-x').replace('border-color:#4A4E55;','border-color:#4A4E55;'+frame)
-page('hero-final', left(184,46,42,176,392,474) + '<div class="panel"><div class="vert">PORTFOLIO &nbsp;·&nbsp; 2026</div>'+ph_html+stats(440,126)+'</div>'+FOOT)
+page('hero-final', left(184,44,42,176,392,474) + '<div class="panel"><div class="vert">PORTFOLIO &nbsp;·&nbsp; 2026</div>'+ph_html+stats(440,126)+'</div>'+FOOT)
 print('ok', bool(photo))
