@@ -1,0 +1,26 @@
+<!doctype html><meta charset=utf-8><style>*{margin:0;padding:0;box-sizing:border-box}body{width:1600px;height:740px;background:#fff;font-family:'Noto Sans CJK KR';color:#2B2D31;overflow:hidden;padding:44px 56px}
+h1{font-size:34px;font-weight:700;margin-bottom:6px}.sub{font-size:20px;color:#5F7388;margin-bottom:34px}
+.row{display:flex;align-items:stretch;gap:0;justify-content:space-between}
+.col{display:flex;flex-direction:column;gap:14px}
+.lab{font-size:15px;letter-spacing:2px;color:#5F7388;margin-bottom:2px;font-weight:700}
+.box{border-radius:12px;padding:16px 20px;font-size:21px;font-weight:700;line-height:1.35}
+.dark{background:#2B2D31;color:#fff}.mid{background:#5F7388;color:#fff}.lt{background:#DDE4EB;color:#2B2D31}
+.box small{display:block;font-size:16px;font-weight:400;opacity:.85;margin-top:4px}
+.arr{width:70px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#5F7388}
+.grp{border:2px dashed #b9c5d1;border-radius:16px;padding:16px 18px}
+.note{margin-top:30px;font-size:18px;color:#5F7388}
+</style><h1>2차 시스템 구조</h1><div class=sub>모델은 미리 돌려 결과를 DB에 저장하고, 화면은 조회만 하는 구조</div>
+<div class=row>
+<div class=col><div class=lab>DATA</div><div class="box lt">전력사용량<small>17개 시도 · 월별 55개월</small></div><div class="box lt">기상 자료<small>시도 + 연도 + 월 기준으로 통일</small></div></div>
+<div class=arr>→</div>
+<div class=grp><div class=lab>PYTHON · 미리 실행</div><div class=col><div class="box mid">데이터 정리<small>pandas</small></div><div class="box mid">모델 학습 · 비교<small>시간순 분리<br>Random Forest(최종)<br>XGBoost · LightGBM 비교</small></div></div></div>
+<div class=arr>→</div>
+<div class=grp><div class=lab>MARIADB · MYBATIS</div><div class=col><div class="box dark">저장된 예측<small>forecast (앞으로 3개월)<br>backtest (검증 결과)</small></div><div class="box dark">실측 · 기준표<small>monthly_data (935행)<br>region (17개 시도)</small></div></div></div>
+<div class=arr>→</div>
+<div class=grp><div class=lab>SPRING BOOT · THYMELEAF</div><div class=col style="gap:10px">
+<div class="box lt" style="padding:12px 18px">지도<small>시도별 증감률 · 클릭으로 지역 선택 (amCharts)</small></div>
+<div class="box lt" style="padding:12px 18px">요약 카드 4개 · 앞으로 3개월 예측<small>최근 실적 · 예측 · 전년 대비 · 검증 오차</small></div>
+<div class="box lt" style="padding:12px 18px">월별 추이 · 지역 특성 레이더<small>예측 구간은 점선 (Chart.js)</small></div>
+<div class="box lt" style="padding:12px 18px">순위 표 · 상세 페이지<small>막대 · 계절 패턴 · 히트맵 · CSV</small></div>
+</div></div>
+</div><div class=note>※ 예시 초안입니다. 지역을 고르면 지도·순위·차트가 함께 바뀝니다(sessionStorage + 이벤트). 발표 자료(2차 PPT) 기준입니다.</div>
