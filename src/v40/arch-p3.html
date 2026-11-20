@@ -1,0 +1,38 @@
+<!doctype html><meta charset=utf-8><style>*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:2400px;background:#fff;font-family:'Noto Sans CJK KR';color:#2B2D31;overflow:hidden;word-break:keep-all}
+.top{height:6px;background:#2B2D31}
+.head{display:flex;align-items:flex-end;padding:26px 40px 22px;gap:24px;flex-wrap:wrap}
+.n{font-family:'Noto Serif CJK KR';font-size:84px;font-weight:400;line-height:1;color:#5F7388}
+.t{flex:1;padding-bottom:6px}.t h1{font-size:42px;font-weight:700;line-height:1.1}.t p{font-size:25px;line-height:1.4;color:#44566a;margin-top:10px;font-weight:500}
+.tag{border:3px solid #2B2D31;padding:8px 16px;font-size:20px;font-weight:700;letter-spacing:2px;margin-bottom:10px}
+.line{height:2px;background:#2B2D31;margin:0 40px}
+.flow{display:flex;padding:28px 40px 0;align-items:stretch;gap:26px}
+.col:not(:last-child) .ch{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%)}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;border-bottom:2px solid #2B2D31}
+.ch{height:92px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #2B2D31}
+.ch .num{font-family:'Noto Serif CJK KR';font-size:44px;color:#5F7388;line-height:1;width:54px}
+.ch .k{font-size:16px;letter-spacing:1px;color:#5F7388;font-weight:700}
+.ch .h{font-size:30px;font-weight:700;margin-top:2px;line-height:1.2}
+.it{padding:16px 0 15px}
+.it+.it{border-top:1px solid #d3dae1}
+.it b{display:block;font-size:28px;font-weight:700;line-height:1.35}
+.it span{display:block;font-size:23px;color:#44566a;margin-top:4px;line-height:1.45}
+.ar{width:70px;height:95px;margin-top:3px;display:flex;align-items:center;justify-content:center;flex:none}
+.ar svg{width:34px;height:18px}
+.ch{background:#2B2D31;border-bottom-color:#2B2D31;padding:0 12px}
+.ch .num{color:#9fb0c1}.ch .k{color:#9fb0c1}.ch .h{color:#fff}
+.it{padding-left:14px;padding-right:10px}
+.strip{display:flex;flex-direction:column;margin:0 40px;border-top:1px solid #2B2D31;padding:18px 0;gap:8px}
+.strip .k{font-size:22px;letter-spacing:1px;color:#44566a;font-weight:700;flex:none}
+.strip .v{font-size:25px;line-height:1.55}.strip .v b{font-weight:700}
+.end{margin-top:26px;border-top:6px solid #2B2D31}
+</style><div class=top></div>
+<div class=head><div class=n>3차</div><div class=t><h1>시스템 구조</h1><p>예보에 위험점수를 매기고 A*로 길을 찾습니다. 머신러닝은 시험만 하고 쓰지 않았습니다</p></div><div class=tag>NO ML IN SERVICE</div></div><div class=line></div>
+<div class=flow>
+<div class="col "><div class=ch><div class=num>01</div><div><div class=k>EXTERNAL API</div><div class=h>수집</div></div></div><div class=it><b>MTIS</b><span>실시간 선박&nbsp;· 사고위험 예보<br>10분&nbsp;· 30분 주기</span></div><div class=it><b>Open-Meteo</b><span>항구 날씨&nbsp;· 파고&nbsp;· 풍속 예보</span></div></div>
+<div class="col key"><div class=ch><div class=num>02</div><div><div class=k>SPRING BOOT</div><div class=h>계산</div></div></div><div class=it><b>위험도 조립</b><span>교통 0.5&nbsp;· 사고예보 0.3&nbsp;· 날씨 0.2<br>MTIS 칸 단위로 합쳐 0~1 점수</span></div><div class=it><b>A* 탐색 두 번</b><span>최소경로&nbsp;· 안전경로 함께 반환<br>비용 = 거리 × (1 + α × 위험)</span></div><div class=it><b>항구 DB (MariaDB)</b><span>무역항 31곳 이름&nbsp;· 좌표</span></div></div>
+<div class="col "><div class=ch><div class=num>03</div><div><div class=k>BROWSER</div><div class=h>화면</div></div></div><div class=it><b>경로 탐색</b><span>출발&nbsp;· 도착 항구 선택&nbsp;· 두 경로를 한 지도에</span></div><div class=it><b>교통현황</b><span>선박 수&nbsp;· 밀집도<br>사고위험 칸&nbsp;· 사고<br>좌초 지점</span></div><div class=it><b>안전진단</b><span>파고&nbsp;· 풍속 72시간 그래프<br>출발지(실선)와 도착지(점선) 비교</span></div><div class=it><b>출항 시각&nbsp;· 항만 CCTV</b><span>화면 전체가<br>같은 시각 기준으로 표시</span></div></div>
+</div>
+<div style="height:34px"></div>
+<div class=strip><div class=k>시험 후 미사용</div><div class=v><b>날씨로 사고 구분</b>　로지스틱 회귀 등으로 돌려 봤지만 AUC 0.549라 서비스에는 쓰지 않았습니다. 날씨는 운항 한계 판정(파고 4m&nbsp;· 풍속 20m/s)에만 쓰고, 가중치 11조합은 MTIS 사고다발 26칸으로 채점해 골랐습니다.</div></div>
+<div class=end></div>

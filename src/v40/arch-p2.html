@@ -1,0 +1,40 @@
+<!doctype html><meta charset=utf-8><style>*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:2400px;background:#fff;font-family:'Noto Sans CJK KR';color:#2B2D31;overflow:hidden;word-break:keep-all}
+.top{height:6px;background:#2B2D31}
+.head{display:flex;align-items:flex-end;padding:26px 40px 22px;gap:24px;flex-wrap:wrap}
+.n{font-family:'Noto Serif CJK KR';font-size:84px;font-weight:400;line-height:1;color:#5F7388}
+.t{flex:1;padding-bottom:6px}.t h1{font-size:42px;font-weight:700;line-height:1.1}.t p{font-size:25px;line-height:1.4;color:#44566a;margin-top:10px;font-weight:500}
+.tag{border:3px solid #2B2D31;padding:8px 16px;font-size:20px;font-weight:700;letter-spacing:2px;margin-bottom:10px}
+.line{height:2px;background:#2B2D31;margin:0 40px}
+.flow{display:flex;padding:28px 40px 0;align-items:stretch;gap:26px}
+.col:not(:last-child) .ch{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%)}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;border-bottom:2px solid #2B2D31}
+.ch{height:92px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #2B2D31}
+.ch .num{font-family:'Noto Serif CJK KR';font-size:44px;color:#5F7388;line-height:1;width:54px}
+.ch .k{font-size:16px;letter-spacing:1px;color:#5F7388;font-weight:700}
+.ch .h{font-size:30px;font-weight:700;margin-top:2px;line-height:1.2}
+.it{padding:16px 0 15px}
+.it+.it{border-top:1px solid #d3dae1}
+.it b{display:block;font-size:28px;font-weight:700;line-height:1.35}
+.it span{display:block;font-size:23px;color:#44566a;margin-top:4px;line-height:1.45}
+.ar{width:70px;height:95px;margin-top:3px;display:flex;align-items:center;justify-content:center;flex:none}
+.ar svg{width:34px;height:18px}
+.ch{background:#2B2D31;border-bottom-color:#2B2D31;padding:0 12px}
+.ch .num{color:#9fb0c1}.ch .k{color:#9fb0c1}.ch .h{color:#fff}
+.it{padding-left:14px;padding-right:10px}
+.strip{display:flex;flex-direction:column;margin:0 40px;border-top:1px solid #2B2D31;padding:18px 0;gap:8px}
+.strip .k{font-size:22px;letter-spacing:1px;color:#44566a;font-weight:700;flex:none}
+.strip .v{font-size:25px;line-height:1.55}.strip .v b{font-weight:700}
+.end{margin-top:26px;border-top:6px solid #2B2D31}
+</style><div class=top></div>
+<div class=head><div class=n>2차</div><div class=t><h1>시스템 구조</h1><p>모델은 미리 돌려 결과를 DB에 저장하고, 화면은 조회만 합니다</p></div><div class=tag>PRE-COMPUTED</div></div><div class=line></div>
+<div class=flow>
+<div class="col "><div class=ch><div class=num>01</div><div><div class=k>DATA</div><div class=h>자료</div></div></div><div class=it><b>전력사용량</b><span>17개 시도&nbsp;· 월별 55개월</span></div><div class=it><b>기상 자료</b><span>시도 + 연도 + 월 기준으로 통일</span></div></div>
+<div class="col "><div class=ch><div class=num>02</div><div><div class=k>PYTHON</div><div class=h>학습&nbsp;· 비교</div></div></div><div class=it><b>데이터 정리</b><span>pandas</span></div><div class=it><b>모델 학습&nbsp;· 비교</b><span>시간순 분리<br>Random Forest(최종)<br>XGBoost&nbsp;· LightGBM</span></div></div>
+<div class="col key"><div class=ch><div class=num>03</div><div><div class=k>MARIADB</div><div class=h>저장</div></div></div><div class=it><b>forecast</b><span>앞으로 3개월 예측</span></div><div class=it><b>backtest</b><span>모델 검증 결과</span></div><div class=it><b>monthly_data<br>region</b><span>과거 실측 935행<br>17개 시도 기준표</span></div></div>
+<div class="col "><div class=ch><div class=num>04</div><div><div class=k>SPRING BOOT</div><div class=h>화면 조회</div></div></div><div class=it><b>지도</b><span>시도별 증감률&nbsp;· 클릭으로 지역 선택</span></div><div class=it><b>요약 카드&nbsp;· 3개월 예측</b><span>최근 실적&nbsp;· 예측&nbsp;· 전년 대비&nbsp;· 검증 오차</span></div><div class=it><b>월별 추이&nbsp;· 지역 특성 레이더</b><span>예측 구간은 점선</span></div><div class=it><b>순위 표&nbsp;· 상세 페이지</b><span>막대&nbsp;· 계절 패턴<br>히트맵&nbsp;· CSV</span></div></div>
+</div>
+<div style="height:34px"></div>
+<div class=strip><div class=k>한 번 클릭하면</div><div class=v>지역을 고르면 <b>지도&nbsp;· 순위&nbsp;· 도넛&nbsp;· 레이더</b>가 함께 바뀝니다. 선택은 sessionStorage에 두고, 바뀌었다는 알림을 이벤트로 전파합니다.</div></div>
+<div class=strip><div class=k>화면 기술</div><div class=v>Thymeleaf&nbsp;· Chart.js(차트)&nbsp;· amCharts(지도)&nbsp;· axios</div></div>
+<div class=end></div>
